@@ -1,0 +1,607 @@
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, sans-serif;
+   background-color: rgb(18, 14, 14);
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  
+}
+
+header {
+   background-color:#06182B;
+   color: #fff;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 10px;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ 
+ /* Sticky Navigation */
+ header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 100;
+   transition: background-color 0.3s ease;
+ }
+ 
+ header.sticky {
+   background-color: rgba(6, 24, 43, 0.9); /* Adjust the background color as needed */
+ }
+
+nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   padding-right: 60px;
+}
+
+nav li {
+   margin-right: 20px;
+}
+
+nav a {
+   color: #fff;
+   text-decoration: none;
+}
+
+main {
+   padding: 20px;
+}
+
+
+
+
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  z-index: 1;
+}
+.container-left h1 {
+  font-size: 3rem; /* Increase font size for heading */
+  margin-bottom: 1rem;
+}
+
+.container-left p {
+  font-size: 1.5rem; /* Increase font size for paragraph */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container-left h1,
+  .container-left p {
+      font-size: 18px;
+      line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-left h1,
+  .container-left p {
+      font-size: 50px;
+      line-height: 1.2;
+  }
+}
+
+.drop-text {
+  opacity: 0;
+  animation: drop-letters 3s steps(100, end) forwards;
+}
+
+@keyframes drop-letters {
+  from {
+      transform: translateY(-100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.drop-text::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: white;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+
+.background-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.column {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: slideInFromTop 1s ease-out forwards, bounceAtBottom 0.5s ease-in-out infinite;
+  animation-delay: 0s, 10s;
+}
+
+@keyframes slideInFromTop {
+  0% {
+      top: -100%;
+  }
+  100% {
+      top: 0;
+      opacity: 1;
+  }
+}
+
+@keyframes bounceAtBottom {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(20px);
+  }
+}
+footer {
+   background: #06182B;
+   color: #fff;
+   text-align: center;
+   padding: 1rem;
+   position:fixed;
+   bottom: 0;
+   width: 100%;
+}
+
+.footer-text {
+   margin: 0;
+   text-align: center;
+}
+.logo img {
+   height: 50px; /* Adjust the height as necessary */
+   width: auto;
+   padding-left: 30px;
+}
+h1{
+   text-align: center;
+   font-family:'Times New Roman', Times, serif;
+}
+p{
+   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   text-align: left;
+}
+
+
+
+ /* about page */
+ .about-container {
+   display: flex;
+   flex-wrap: wrap;
+ }
+ 
+ .about-right {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.about-right h1 {
+  font-size: 28px;
+  color:whitesmoke;
+  margin-bottom: 20px;
+}
+
+.about-right p {
+  margin-bottom: 15px;
+  color: whitesmoke;
+  font-size: larger;
+}
+
+.about-right strong {
+  font-weight: bold;
+}
+blockquote {
+  font-style: italic;
+  color: #0e0101;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border-left: 4px solid #ccc;
+}
+
+blockquote span {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+ .skills-container {
+   display: flex;
+   width: 100%;
+   min-height: 100vh; /* Use min-height to accommodate content */
+   justify-content: center;
+   align-items: center;
+   padding: 30px;
+   box-sizing: border-box;
+   color: #fff; /* White text for contrast */
+   background-color: #06182B;
+ }
+ 
+ .skills-left, .skills-right {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 48%; /* Adjusted to take full width */
+   background-color:#000000; 
+   padding: 20px;
+   box-sizing: border-box; /* Ensure padding is included in the width */
+   border-radius: 20px;
+   margin: 20px; /* Add some spacing between the left and right containers */
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+ }
+ 
+ .skills-left:hover, .skills-right:hover {
+   transform: scale(1.05); /* Slight enlargement on hover */
+   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+ }
+ 
+ .skills-left h2, .skills-right h2 {
+   margin-top: 0;
+   text-align: center;
+   font-size: 28px; /* Larger font size for headings */
+   font-weight: bold;
+   letter-spacing: 2px; /* Space out letters for a modern feel */
+   text-transform: uppercase; /* Uppercase headings for added style */
+   color: #fff; /* White text for contrast */
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for depth */
+ }
+ 
+ .skills-left ul, .skills-right ul {
+   list-style: none;
+   padding: 0;
+   font-size: 20px; /* Increase font size for better readability */
+   line-height: 1.5; /* Improve readability */
+   width: 100%;
+ }
+ 
+ .skills-left ul li, .skills-right ul li {
+   margin-bottom: 20px;
+   font-weight: normal; /* Regular weight for list items */
+   transition: color 0.3s ease; /* Smooth color change on hover */
+   display: flex;
+   align-items: center;
+   justify-content: center; /* Center items horizontally */
+   flex-direction: row; /* Stack items horizontally */
+ }
+ 
+ .skills-left ul li:hover, .skills-right ul li:hover {
+   color: #fff; /* Change color on hover for interactivity */
+   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add a subtle glow on hover */
+ }
+ 
+ .skills-left ul li span, .skills-right ul li span {
+   margin-left: 10px; /* Add some spacing between the text and progress bar */
+   white-space: nowrap; /* Prevent the text from wrapping to the next line */
+ }
+ 
+ progress {
+   width: 200px; /* Wider width */
+   height: 20px; /* Taller height */
+   border-radius: 10px; /* Rounder corners */
+   border: none; /* Remove the border */
+   background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+   overflow: hidden; /* Ensures that the inner elements don't overflow the rounded corners */
+ }
+ 
+ progress::-webkit-progress-value {
+   background: linear-gradient(to right, #f44336, #ffeb3b, #4caf50); /* Change the gradient colors */
+   transition: width 0.3s ease-in-out; /* Smooth animation for the progress bar */
+ }
+ 
+ progress::-moz-progress-bar {
+   background: linear-gradient(to right, #f44336, #ffeb3b, #4caf50); /* Change the gradient colors */
+   transition: width 0.3s ease-in-out; /* Smooth animation for the progress bar */
+ }
+ 
+ /* Add some responsive styles */
+ @media (max-width: 768px) {
+   .skills-container {
+     flex-direction: column;
+     align-items: stretch;
+   }
+ 
+   .skills-left, .skills-right {
+     width: 100%;
+     margin: 10px 0;
+   }
+ 
+   .skills-left ul li, .skills-right ul li {
+     flex-direction: column; /* Stack items vertically on smaller screens */
+     align-items: flex-start; /* Align items to the left */
+   }
+ 
+   .skills-left ul li span, .skills-right ul li span {
+     margin-left: 0; /* Remove left margin on smaller screens */
+     margin-top: 10px; /* Add some spacing between the text and progress bar */
+   }
+ }
+ 
+
+ #portfolio {
+   max-width: 1200px;
+   margin: auto;
+   padding: 10px;
+ }
+ 
+ #portfolio h1 {
+   text-align: center;
+   color: white;
+ }
+ 
+ .cards-container {
+   display: flex;
+   flex-wrap: wrap; /* Allow wrapping on all screen sizes */
+   justify-content: center;
+   gap: 20px;
+   padding: 20px;
+   background-color: #06182B;
+ }
+ 
+ .project-card {
+   position: relative;
+   width: 300px;
+   height: 400px;
+   margin: 0;
+   overflow: hidden;
+   border-radius: 10px;
+   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+   border: 1px solid rgba(255, 255, 255, 0.18);
+   transition: transform 0.25s;
+   display: flex;
+   flex-direction: column;
+   text-decoration: none;
+   background-color: rgb(18, 14, 14);
+ }
+ 
+ .project-card img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+ }
+ 
+ .project-card h3,
+ .project-card p {
+   margin: 10px;
+   position: relative;
+   z-index: 2; /* Ensure text is above the link */
+ }
+ 
+ .project-card:hover {
+   transform: translateY(-5%);
+   cursor: pointer;
+ }
+ 
+ /* Text styling */
+ .project-card h3 {
+   color: rgb(243, 238, 238);
+   font-size: 24px;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+ }
+ 
+ .project-card p {
+   color: white;
+   font-size: 16px;
+   opacity: 0.8;
+ }
+ 
+ /* Link styling */
+ .project-card a {
+   text-align: center;
+   text-decoration: none;
+   color: inherit;
+ }
+ 
+ /* Source Code Link Styling */
+ .source-code-link {
+   margin-top: auto;
+   text-align: center;
+   padding: 10px;
+   background-color: #333;
+   color: white;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+   text-transform: uppercase;
+   position: absolute;
+   bottom: 10px;
+   left: 50%;
+   transform: translateX(-50%);
+ }
+ 
+ .source-code-link:hover {
+   background-color: #555;
+ }
+ 
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+   .project-card {
+     width: 100%;
+     height: auto;
+   }
+ 
+   .project-card img {
+     height: auto;
+   }
+ 
+   .source-code-link {
+     position: static; /* Make the link static on smaller screens */
+     transform: none; /* Remove transformation */
+     margin-top: 10px; /* Add margin to separate from other content */
+   }
+ }
+ 
+
+
+
+
+ #contact {
+   background-color: rgb(18, 14, 14);
+   margin-bottom: 50px;
+ }
+ 
+ .contact-container {
+   max-width: 800px;
+   margin: 0 auto;
+   text-align: center;
+ }
+ 
+ .contact-container h2 {
+   font-size: 36px;
+   margin-bottom: 40px;
+   color:white;
+ }
+ 
+ .contact-info {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 40px;
+ }
+ 
+ .info-item {
+   margin: 0 20px;
+   text-align: center;
+ }
+ 
+ .info-item i {
+   font-size: 24px;
+   color:white;
+   margin-bottom: 10px;
+ }
+ 
+ .info-item p {
+   font-size: 18px;
+   line-height: 1.5;
+   color:white;
+ }
+ 
+ .info-item a {
+   color:white;
+   text-decoration: none;
+   transition: color 0.3s ease;
+ }
+ 
+ .info-item a:hover {
+   color:white;
+ }
+ 
+ .contact-form h3 {
+   font-size: 24px;
+   margin-bottom: 20px;
+   color:white;
+ }
+ 
+ #contact-form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ 
+ .form-group {
+   width: 100%;
+   margin-bottom: 20px;
+ }
+ 
+ .form-group input,
+ .form-group textarea {
+   width: 100%;
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 16px;
+ }
+ 
+ .form-group textarea {
+   resize: vertical;
+ }
+ 
+ .btn {
+   background-color: green;
+   color:black;
+   padding: 12px 20px;
+   border: none;
+   border-radius: 4px;
+   font-size: 18px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .btn:hover {
+   background-color: #555;
+ }

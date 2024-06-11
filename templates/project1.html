@@ -1,0 +1,11 @@
+{% extends "homepage.html" %}
+
+{% block title %}Project 1{% endblock %}
+
+{% block content %}
+<div class="project-details">
+    <h1>Project 1 Details</h1>
+    <img src="{{ url_for('static', filename='images/Picture1.png') }}" alt="Background Image 1" class="background-image">
+    {{ html_content | safe }}
+</div>
+{% endblock %}

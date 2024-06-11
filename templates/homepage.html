@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body id="top">
+    <header>
+        <div class="logo">
+            <a href="#top">
+                <img src="{{ url_for('static', filename='images/image.png') }}" alt="Image 1">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <div class="container" id="home">
+            <div class="background-slideshow">
+            <div class="background-image-container">
+                <div class="column" data-interval="12000">
+                    <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Background Image 1" class="background-image">
+                    <img src="{{ url_for('static', filename='images/image.png') }}" alt="Background Image 2" class="background-image">
+                  <!-- Add more images as needed -->
+                </div>
+                <div class="column" data-interval="8000">
+                    <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Background Image 1" class="background-image">
+                    <img src="{{ url_for('static', filename='images/image.png') }}" alt="Background Image 2" class="background-image">
+                  <!-- Add more images as needed -->
+                </div>
+                <div class="column" data-interval="15000">
+                    <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Background Image 1" class="background-image">
+                    <img src="{{ url_for('static', filename='images/image.png') }}" alt="Background Image 2" class="background-image">
+                  <!-- Add more images as needed -->
+                </div>
+              </div>
+            </div>
+      
+            <div class="container-left">
+                <h1 class="text"></h1>
+                <p class="text"></p>
+            </div>
+        </div>
+     <div class="about-container" id="about">
+        <div class="about-right">
+            <h1>About Me</h1>
+            <p>
+                Hi there! I'm Emmanuel Balogun, a dedicated and passionate Computer Science student with a unique journey that intertwines athletic excellence and academic ambition. Born and raised in Nigeria, my love for sports began with basketball, where I honed my skills and developed a deep sense of discipline and teamwork.
+            </p>
+            
+            <p>
+                My dedication to basketball opened doors for me, leading to an incredible opportunity to move to the United States. I attended <strong>St. Frances Academy</strong> in Baltimore, where I not only continued to excel in basketball but also discovered a new passion: football. During my time at St. Frances, I proudly represented the school in both basketball and football, showcasing my versatility and commitment to athleticism.
+            </p>
+            
+            <p>
+                After high school, I pursued a post-graduate year at <strong>Fork Union Military Academy</strong>, further refining my skills and preparing for the challenges ahead. My collegiate journey began at <strong>Marshall University</strong>, where I played football from my freshman to junior years. These years were marked by significant growth, both on the field and in the classroom, as I balanced the rigors of a demanding sport with my studies in Computer Science.
+            </p>
+            
+            <p>
+                In my senior year, I transferred to the <strong>University of North Carolina at Charlotte</strong> (UNCC), where I continued to play football while completing my degree. This transition was a pivotal moment, allowing me to experience a new environment and further broaden my horizons.
+            </p>
+            
+            <p>
+                Throughout my athletic career, the lessons learned from sports—such as discipline, perseverance, and teamwork—have greatly influenced my approach to Computer Science. I am passionate about exploring new technologies, solving complex problems, and applying my skills to make a positive impact.
+            </p>
+            
+            <p>
+                As I prepare to graduate, I am eager to bring my unique blend of athletic determination and technical expertise to the professional world. Whether on the field or in the lab, my commitment to excellence remains unwavering. Let's build the future together.
+            </p>
+        </div>
+    </div>
+    
+    </div>
+    <div class="skills-container" id="skills">
+        <div class="skills-left">
+          <h2>Technical Skills</h2>
+          <ul>
+            <li><progress value="75" max="100"></progress><span>75%</span> HTML5</li>
+            <li><progress value="80" max="100"></progress><span>80%</span> CSS3</li>
+            <li><progress value="65" max="100"></progress><span>65%</span> JavaScript</li>
+            <li><progress value="90" max="100"></progress><span>90%</span> React.js</li>
+            <li><progress value="70" max="100"></progress><span>70%</span> Node.js</li>
+            <li><progress value="85" max="100"></progress><span>85%</span> Python</li>
+            <li><progress value="95" max="100"></progress><span>95%</span> SQL</li>
+          </ul>
+        </div>
+        <div class="skills-right">
+          <h2>Soft Skills</h2>
+          <ul>
+            <li><progress value="60" max="100"></progress><span>60%</span> Communication</li>
+            <li><progress value="75" max="100"></progress><span>75%</span> Teamwork</li>
+            <li><progress value="80" max="100"></progress><span>80%</span> Problem-solving</li>
+            <li><progress value="65" max="100"></progress><span>65%</span> Time management</li>
+            <li><progress value="90" max="100"></progress><span>90%</span> Leadership</li>
+            <li><progress value="85" max="100"></progress><span>85%</span> Adaptability</li>
+          </ul>
+        </div>
+    </div>
+    <section id="portfolio">
+        <div class="cards-container">
+            <div class="project-card">
+                <a href="{{ url_for('project1') }}">
+                    <img src="{{ url_for('static', filename='images/jobsync.png') }}" alt="Image 2">
+                    <h3>Jobsync</h3>
+                    <p>JobSync is an app that helps you keep track of your applications to jobs and internships.</p>
+                </a>
+                <a class="source-code-link" href="/static/JobSync-master.zip" download="JobSync-master.zip">Source Code</a> 
+                </div>
+            <div class="project-card">
+                <a href="{{ url_for('project2') }}">
+                    <img src="{{ url_for('static', filename='images/aurduino.png') }}" alt="Image 2">
+                    <h3>Traffic Light</h3>
+                    <p>The code runs a two-way traffic light with NeoPixel LEDs, cycling through regular and emergency red blinking modes.</p>
+                </a>
+                <a class="source-code-link" href="/static/Traffic-Light.zip" download="Traffic-Light.zip">Source Code</a>
+            </div>
+            <div class="project-card">
+                <a href="{{ url_for('project2') }}">
+                    <img src="{{ url_for('static', filename='image1.png') }}" alt="Picture of me in football jersey">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2</p>
+                </a>
+            </div>
+        </div>
+        <!-- Contact Section -->
+<section id="contact">
+    <div class="contact-container">
+      <h2>Get in Touch</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>Email: <a href="mailto:Emmanuelbalogunn@gmail.com<">Emmanuelbalogunn@gmail.com</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>Phone: <a href="tel:+17045348737">     +1 (704) 534-8737</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Location: Charlotte, NC</p>
+        </div>
+    
+    </div>
+  </section>
+        {% endblock %}
+    </main>
+    <footer>
+      <p class="footer-text">&copy; 2024 Eport. All rights reserved.</p>
+  </footer>
+</body>
+</html>
